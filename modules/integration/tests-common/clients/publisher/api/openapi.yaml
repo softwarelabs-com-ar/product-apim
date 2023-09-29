@@ -16020,6 +16020,7 @@ components:
         createdTime: createdTime
         id: 01234567-0123-0123-0123-012345678901
         wsdlUrl: /apimgt/applicationdata/wsdls/admin--soap1.wsdl
+        apiKeyHeader: apiKey
         accessControlRoles: []
         audience: PUBLIC
         visibility: PUBLIC
@@ -16331,6 +16332,12 @@ components:
             Name of the Authorization header used for invoking the API. If it is not set, Authorization header name specified
             in tenant or system level will be used.
           example: Authorization
+          pattern: (^[^~!@#;:%^*()+={}|\\<>"',&$\s+]*$)
+          type: string
+        apiKeyHeader:
+          description: |
+            Name of the API key header used for invoking the API. If it is not set, default value `apiKey` will be used.
+          example: apiKey
           pattern: (^[^~!@#;:%^*()+={}|\\<>"',&$\s+]*$)
           type: string
         securityScheme:
@@ -16960,6 +16967,7 @@ components:
             name: name
             value: value
         revisionedApiProductId: 01234567-0123-0123-0123-012345678901
+        apiKeyHeader: apiKey
         accessControlRoles: []
         lastUpdatedTimestamp: lastUpdatedTimestamp
         hasThumbnail: false
@@ -17141,6 +17149,12 @@ components:
             Name of the Authorization header used for invoking the API. If it is not set, Authorization header name specified
             in tenant or system level will be used.
           example: Authorization
+          type: string
+        apiKeyHeader:
+          description: |
+            Name of the API key header used for invoking the API. If it is not set, default value `apiKey` will be used.
+          example: apiKey
+          pattern: (^[^~!@#;:%^*()+={}|\\<>"',&$\s+]*$)
           type: string
         securityScheme:
           description: |

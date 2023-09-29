@@ -279,6 +279,10 @@ public static ApiTypeEnum fromValue(String value) {
         @SerializedName(SERIALIZED_NAME_AUTHORIZATION_HEADER)
             private String authorizationHeader;
 
+        public static final String SERIALIZED_NAME_API_KEY_HEADER = "apiKeyHeader";
+        @SerializedName(SERIALIZED_NAME_API_KEY_HEADER)
+            private String apiKeyHeader;
+
         public static final String SERIALIZED_NAME_SECURITY_SCHEME = "securityScheme";
         @SerializedName(SERIALIZED_NAME_SECURITY_SCHEME)
             private List<String> securityScheme = null;
@@ -944,6 +948,29 @@ public static SubscriptionAvailabilityEnum fromValue(String value) {
     }
 
 
+        public APIProductDTO apiKeyHeader(String apiKeyHeader) {
+        
+        this.apiKeyHeader = apiKeyHeader;
+        return this;
+        }
+
+    /**
+        * Name of the API key header used for invoking the API. If it is not set, default value &#x60;apiKey&#x60; will be used. 
+    * @return apiKeyHeader
+    **/
+        @javax.annotation.Nullable
+      @ApiModelProperty(example = "apiKey", value = "Name of the API key header used for invoking the API. If it is not set, default value `apiKey` will be used. ")
+    
+    public String getApiKeyHeader() {
+        return apiKeyHeader;
+    }
+
+
+    public void setApiKeyHeader(String apiKeyHeader) {
+        this.apiKeyHeader = apiKeyHeader;
+    }
+
+
         public APIProductDTO securityScheme(List<String> securityScheme) {
         
         this.securityScheme = securityScheme;
@@ -1345,6 +1372,7 @@ public static SubscriptionAvailabilityEnum fromValue(String value) {
             Objects.equals(this.policies, apIProduct.policies) &&
             Objects.equals(this.apiThrottlingPolicy, apIProduct.apiThrottlingPolicy) &&
             Objects.equals(this.authorizationHeader, apIProduct.authorizationHeader) &&
+            Objects.equals(this.apiKeyHeader, apIProduct.apiKeyHeader) &&
             Objects.equals(this.securityScheme, apIProduct.securityScheme) &&
             Objects.equals(this.subscriptionAvailability, apIProduct.subscriptionAvailability) &&
             Objects.equals(this.subscriptionAvailableTenants, apIProduct.subscriptionAvailableTenants) &&
@@ -1365,7 +1393,7 @@ public static SubscriptionAvailabilityEnum fromValue(String value) {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, context, description, provider, hasThumbnail, state, enableSchemaValidation, isRevision, revisionedApiProductId, revisionId, responseCachingEnabled, cacheTimeout, visibility, visibleRoles, visibleTenants, accessControl, accessControlRoles, apiType, transport, tags, policies, apiThrottlingPolicy, authorizationHeader, securityScheme, subscriptionAvailability, subscriptionAvailableTenants, additionalProperties, additionalPropertiesMap, monetization, businessInformation, corsConfiguration, createdTime, lastUpdatedTimestamp, lastUpdatedTime, gatewayVendor, apis, scopes, categories, workflowStatus);
+        return Objects.hash(id, name, context, description, provider, hasThumbnail, state, enableSchemaValidation, isRevision, revisionedApiProductId, revisionId, responseCachingEnabled, cacheTimeout, visibility, visibleRoles, visibleTenants, accessControl, accessControlRoles, apiType, transport, tags, policies, apiThrottlingPolicy, authorizationHeader, apiKeyHeader, securityScheme, subscriptionAvailability, subscriptionAvailableTenants, additionalProperties, additionalPropertiesMap, monetization, businessInformation, corsConfiguration, createdTime, lastUpdatedTimestamp, lastUpdatedTime, gatewayVendor, apis, scopes, categories, workflowStatus);
     }
 
 
@@ -1397,6 +1425,7 @@ sb.append("class APIProductDTO {\n");
     sb.append("    policies: ").append(toIndentedString(policies)).append("\n");
     sb.append("    apiThrottlingPolicy: ").append(toIndentedString(apiThrottlingPolicy)).append("\n");
     sb.append("    authorizationHeader: ").append(toIndentedString(authorizationHeader)).append("\n");
+    sb.append("    apiKeyHeader: ").append(toIndentedString(apiKeyHeader)).append("\n");
     sb.append("    securityScheme: ").append(toIndentedString(securityScheme)).append("\n");
     sb.append("    subscriptionAvailability: ").append(toIndentedString(subscriptionAvailability)).append("\n");
     sb.append("    subscriptionAvailableTenants: ").append(toIndentedString(subscriptionAvailableTenants)).append("\n");
